@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="htto://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<title>Editar Contrato</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" th:href="@{/}">
+			CRUD de Contratos
+		</a>
+	
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		
+			<ul class="navbar-nav">
+			
+				<li class="nav-item">
+				
+					<a class="nav-link" th:href="@{/contratos}">Control de contratos</a>
+				
+				</li>
+				<li class="nav-item"><a th:href="@{/ejercicio}" class="nav-link" >Ejercicio</a></li>
+			
+			</ul>
+		
+		</div>
+	
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Editar contrato</h1>
+				
+				<div class="card-body">
+					<form th:action="@{/contratos/{id}(id=${contrato.id})}" th:object="${contrato}" method="POST">
+						<br>
+						<div class="form-group">
+							<label>Contratos</label>
+							<input type="text" name="nombrecontratos" th:field="*{nombrecontratos}" class="form-control" placeholder="Escriba el nombre: " required>
+						</div>	
+						<br>
+						<div class="form-group">
+							<label>Monto</label>
+							<input type="number" name="montos" th:field="*{montos}" class="form-control" placeholder="Escriba el apellido: " required>
+						</div>	
+						<br>
+						<div class="form-group">
+							<label>Fecha</label>
+							<input type="date" name="fecha" th:field="*{fecha}" class="form-control" placeholder="Escriba el email: " required>
+						</div>	
+						
+						<br>
+						<div class="box-footer">
+						
+							<button class="btn btn-success">Guardar</button>
+						</div>				
+					
+					</form>
+				</div>
+			</div>
+			
+			
+					
+		</div>
+	
+	</div>
+	
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="htto://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<title>Listado Contratos</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" th:href="@{/}">
+			CRUD de contratos
+		</a>
+	
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		
+			<ul class="navbar-nav">
+			
+				<li class="nav-item">
+				
+					<a class="nav-link" th:href="@{/contratos}">Control de contratos</a>
+				
+				</li>
+				<li class="nav-item"><a th:href="@{/fechasfiltro}" class="nav-link" >Fechas</a></li>
+				<li class="nav-item"><a th:href="@{/ejercicio}" class="nav-link" >Ejercicio</a></li>
+			
+			</ul>
+		
+		</div>
+	
+	</nav>
+
+	<br>
+	<div class="container">
+
+		<div class="row">
+			<h1>Lista de Contratos</h1>
+		</div>
+		
+		<br>
+		<div class="row">
+			<div class="col-lg-3">
+				<a th:href="@{/contratos/nuevo}" class="btn btn-primary btn-sm-mb3">Añadir Contrato</a>
+			</div>
+		</div>
+		<br>
+		<table class="table table-striped">
+
+
+			<thead>
+				<tr>
+				
+					<th>Contrato</th>
+					<th>Monto</th>
+					<th>Fecha</th>
+					<th>Opciones</th>
+				
+				
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="contrato : ${contratos}">
+				
+					<td th:text="${contrato.nombrecontratos}">Contrato</td>
+					<td th:text="${contrato.montos}">Monto</td>
+					<td th:text="${contrato.fecha}"> Fecha</td>
+					<td>
+						<a th:href="@{/contratos/editar/{id}(id=${contrato.id})}" class="btn btn-outline-secondary">Editar</a>
+						<a th:href="@{/contratos/{id}(id=${contrato.id})}" class="btn btn-outline-danger">Eliminar</a>
+					</td>
+				
+				
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+	
+	
+	
+
+
+</body>
+</html>
