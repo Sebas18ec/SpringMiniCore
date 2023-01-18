@@ -16,3 +16,8 @@ Instalación y ejecución
 
 Si todo es correcto, en consola no aparecerá ningún error y acceder al localhost.
 
+Link github: https://github.com/Sebas18ec/SpringMiniCore
+Contacto: sebastian.belalcazar@udla.edu.ec
+Link referencia CRUD: https://youtu.be/oF3XmiHgT-I
+
+
